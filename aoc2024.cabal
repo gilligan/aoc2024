@@ -1,0 +1,38 @@
+cabal-version:      3.0
+name:               aoc2023
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             Tobias Pflug
+maintainer:         tobias.pflug@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+extra-source-files: data/*.txt
+tested-with:        GHC ==9.0.2
+
+common common-options
+  default-language:   Haskell2010
+  default-extensions: OverloadedStrings
+  ghc-options:
+    -Wall -Wcompat -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wredundant-constraints
+    -Wno-name-shadowing -Wno-type-defaults
+
+library
+  import:          common-options
+  exposed-modules:
+    AOC.Day1
+    AOC.Util
+
+  build-depends:
+    , array
+    , base
+    , containers
+    , megaparsec
+    , monad-loops
+    , split
+    , text
+    , trifecta
+    , vector
+
+  hs-source-dirs:  src
